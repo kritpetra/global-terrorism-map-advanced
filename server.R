@@ -223,19 +223,19 @@ shinyServer(function(input, output) {
 
      # Text to be displayed in the side bar
      output$sidebarText <- renderText({"
-          <div style='padding:1em'>
+          <div style='padding: 0.5em 1em 0.5em 1em'>
                Click on an incident for more details, or
                search the <a href='http://www.start.umd.edu/gtd/search/BrowseBy.aspx'>
                Global Terrorism database</a>.
           </div>
 
-          <div style='padding:1em'>
+          <div style='padding:0.5em 1em 0.5em 1em'>
                <b>Note:</b> The locations of some incidents had to be estimated
                with the <a href='http://www.geonames.org/'>GeoNames database</a>.
                As a result, a few markers may appear in weird places!
           </div>
 
-          <div style='padding:1em'>
+          <div style='padding:0.5em 1em 0.5em 1em'>
                More resources for instructors: <a href=''>Stats2Labs</a>.
 </div>
           "})

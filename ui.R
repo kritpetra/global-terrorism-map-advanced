@@ -6,7 +6,7 @@ library(leaflet)
 shinyUI(dashboardPage(
      skin="blue",
 
-     dashboardHeader(title="Exploring Terrorism"),
+     dashboardHeader(title="Exploring Terrorism", disable = F),
 
      dashboardSidebar(
           selectInput('region', "Region", choices = c(
@@ -40,7 +40,7 @@ shinyUI(dashboardPage(
                            "Total fatalities (log)" = "NumFatalities",
                            "Total wounded (log)" = "NumWounded")),
 
-          div(style='padding: 1em',
+          div(style='padding: 0.5em 1em 0.5em',
               actionButton('advOptions', "Advanced Options")),
 
           conditionalPanel(condition = 'input.advOptions % 2',
@@ -58,45 +58,40 @@ shinyUI(dashboardPage(
 
      dashboardBody(
           tags$head(tags$style(HTML( # Additional style parameters
-                              '
-                              html, body {
-                                   font-size: 1em;
-                                   width: 100%;
-                                   height: 100%;
-                              }
+                              ' 
                               td {
-                                   padding-left: 0.5vw;
-                                   padding-right: 0.5vw;
+                                   padding: 0px 10px 0px 10px;
                                    vertical-align: middle;
                               }
                               small {
-                                   font-size: 0.85em;
+                                   font-size: 12px;
                                    color: #444;
                                    font-weight: normal;
                                    font-style: italic;
                               }
                               p.cell {
-                                   line-height: 70%;
+                                   line-height: 80%;
                               }
                               p.numbercell{
                                    left: 0px;
-
                               }
-                              .leaflet-popup{
-                              }
-                              section.sidebar .shiny-input-container {
+                              .shiny-input-container {
                                 padding: 0px 15px 0px 12px;
-                              }
-                              #info {
-                                   font-size: 1.2em;
-                                   max-width: 40vw;
                               }
                               .legend {
                                    white-space: nowrap;
                               }
-
+                              .main-header > .navbar { 
+                                   display: none; 
+                              }
+                              .content-wrapper, .main-footer, .right-side {
+                                   margin-left: inherit;
+                              }
+.skin-blue .main-header .logo {
+font-family: "Arial";
+}
                              '))),
-          leafletOutput("Map", width='100%', height='60em')
+          leafletOutput("Map", width='100%', height='50em')
 
 
      )

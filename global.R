@@ -42,7 +42,7 @@ getColor <- function(variable, data, year, region){
      else if ( variable == "Religion") {
           pal <<- colorFactor(
                c("gold", "#CFB53B", "#F3E5AB", "#009900", "forestgreen", "#4CBB17", "deepskyblue", "maroon", "darkorange", "lightgrey"),
-               c("Christian (Catholic)", "Christian (Orthodox)", "Christian (Other)", "Muslim (Other)", "Muslim (Sunni)", "Muslim (Shiʿa)", "Jewish", "Hindu", "Buddhist", "None/Other"),
+               c("Christian (Catholic)", "Christian (Orthodox)", "Christian (Other)", "Muslim (Other)", "Muslim (Sunni)", "Muslim (Shi'a)", "Jewish", "Hindu", "Buddhist", "None/Other"),
                ordered=TRUE
           )
           variableScale <<- values
